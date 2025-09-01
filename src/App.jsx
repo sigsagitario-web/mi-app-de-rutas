@@ -13,6 +13,7 @@ const firebaseConfig = process.env.NEXT_PUBLIC_FIREBASE_CONFIG ? JSON.parse(proc
       appId: "1:458528960775:web:a15b488612f82d33f195a2"
     };
 const initialAuthToken = process.env.NEXT_PUBLIC_INITIAL_AUTH_TOKEN || null;
+const appId = firebaseConfig.appId || "default-app";
 
 // Icons (inline SVG)
 const svgIcons = {
