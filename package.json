@@ -1,13 +1,14 @@
 {
   "name": "mi-app-de-rutas",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "firebase": "^12.2.1",
@@ -29,9 +30,11 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.12",
     "vite": "^7.1.2"
-   },
+  },
   "engines": {
     "node": "20.x",
     "npm": "10.x"
   }
 }
+
+
