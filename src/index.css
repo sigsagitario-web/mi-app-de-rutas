@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Agrega esta línea para que Vite lo detecte como un archivo CSS con contenido */
-body {
-  background-color: #f3f4f6; /* Un color gris claro de Tailwind */
-}
