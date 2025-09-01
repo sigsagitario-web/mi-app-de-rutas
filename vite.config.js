@@ -10,4 +10,3 @@ export default defineConfig({
     }
   }
 })
-// Cambié esta línea para que Git detectara el archivo
