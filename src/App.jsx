@@ -201,28 +201,27 @@ const App = () => {
     const [isAuthReady, setIsAuthReady] = useState(false);
 
     // Initialize Firebase
-    useEffect(() => {
-        const app = initializeApp(firebaseConfig);
-        const authInstance = getAuth(app);
-        const dbInstance = getFirestore(app);
-        setAuth(authInstance);
-        setDb(dbInstance);
+useEffect(() => {
+  const app = initializeApp(firebaseConfig);
+  const authInstance = getAuth(app);
+  const dbInstance = getFirestore(app);
+  setAuth(authInstance);
+  setDb(dbInstance);
 
-        const unsubscribe = onAuthStateChanged(authInstance, async (user) => {
-            if (user) {
-                setUserId(user.uid);
-            } else {
-                if (initialAuthToken) {
-                    await signInWithCustomToken(authInstance, initialAuthToken);
-                } else {
-                    await signInAnonymously(authInstance);
-                }
-            }
-            setIsAuthReady(true);
-        });
+  // Autenticación anónima inmediata
+  signInAnonymously(authInstance)
+    .then((userCredential) => {
+      setUserId(userCredential.user.uid);
+      setIsAuthReady(true); // Aquí activas los listeners de Firestore
+    })
+    .catch((error) => {
+      console.error('Error en autenticación anónima:', error);
+      setIsAuthReady(true); // Evita pantalla negra aunque falle
+    });
 
-        return () => unsubscribe();
-    }, []);
+}, []);
+
+
 
     // Firestore listeners
     useEffect(() => {
