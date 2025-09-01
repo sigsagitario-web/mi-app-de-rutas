@@ -5,7 +5,6 @@ import { getFirestore, doc, setDoc, onSnapshot, collection, getDoc, deleteDoc } 
 
 // Global variables from the environment
 const firebaseConfig = process.env.NEXT_PUBLIC_FIREBASE_CONFIG ? JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG) : {};
-const appId = process.env.NEXT_PUBLIC_APP_ID || 'default-app-id';
 const initialAuthToken = process.env.NEXT_PUBLIC_INITIAL_AUTH_TOKEN || null;
 
 // Icons (inline SVG)
