@@ -4,7 +4,14 @@ import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged }
 import { getFirestore, doc, setDoc, onSnapshot, collection, getDoc, deleteDoc } from 'firebase/firestore';
 
 // Global variables from the environment
-const firebaseConfig = process.env.NEXT_PUBLIC_FIREBASE_CONFIG ? JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG) : {};
+const firebaseConfig = process.env.NEXT_PUBLIC_FIREBASE_CONFIG ? JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG) : {
+      apiKey: "AIzaSyDaAWwSPXw0ZLM_j2RfIlTzOHhj60kQbJ4",
+      authDomain: "mi-app-de-rutas-proyecto.firebaseapp.com",
+      projectId: "mi-app-de-rutas-proyecto",
+      storageBucket: "mi-app-de-rutas-proyecto.firebasestorage.app",
+      messagingSenderId: "458528960775",
+      appId: "1:458528960775:web:a15b488612f82d33f195a2"
+    };
 const initialAuthToken = process.env.NEXT_PUBLIC_INITIAL_AUTH_TOKEN || null;
 
 // Icons (inline SVG)
